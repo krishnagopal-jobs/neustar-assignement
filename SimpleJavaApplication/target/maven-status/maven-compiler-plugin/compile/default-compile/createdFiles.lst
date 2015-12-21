@@ -1,8 +1,0 @@
-com\neustar\assignment\App.class
-com\neustar\assignment\category\InputFileReader.class
-com\neustar\assignment\category\bean\Category.class
-com\neustar\assignment\category\InputDataHolder.class
-com\neustar\assignment\category\bean\Item.class
-com\neustar\assignment\category\InvalidDataRowException.class
-com\neustar\assignment\category\InputFileReaderImpl.class
-com\neustar\assignment\category\InputDataHolderImpl.class

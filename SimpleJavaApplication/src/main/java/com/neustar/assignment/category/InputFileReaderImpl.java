@@ -32,7 +32,7 @@ public class InputFileReaderImpl implements InputFileReader {
 	 */
 	public InputFileReaderImpl(String filePath) {
 		inputFilePath = Paths.get(filePath);
-		System.out.println("inputFilePath :" + inputFilePath.toAbsolutePath());
+//		System.out.println("inputFilePath :" + inputFilePath.toAbsolutePath());
 		inputDataHolder = new InputDataHolderImpl();
 	}
 
@@ -56,7 +56,7 @@ public class InputFileReaderImpl implements InputFileReader {
 				try {
 					inputDataHolder.addDataRow(dataRow);
 				} catch (InvalidDataRowException e) {
-					e.printStackTrace(System.err);
+//					e.printStackTrace(System.err);
 				}
 			}
 		}
