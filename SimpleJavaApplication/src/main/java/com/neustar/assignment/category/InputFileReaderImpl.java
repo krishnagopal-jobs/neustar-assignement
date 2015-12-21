@@ -32,9 +32,11 @@ public class InputFileReaderImpl implements InputFileReader {
 	 * 
 	 */
 	public InputFileReaderImpl(String filePath) {
+		logger.debug("InputFileReaderImpl(String filePath) ---  start");
 		inputFilePath = Paths.get(filePath);
 		logger.info("inputFilePath :" + inputFilePath.toAbsolutePath());
 		inputDataHolder = new InputDataHolderImpl();
+		logger.debug("InputFileReaderImpl(String filePath) ---  end");
 	}
 
 	/* (non-Javadoc)
@@ -50,7 +52,7 @@ public class InputFileReaderImpl implements InputFileReader {
 	 */
 	@Override
 	public void readFile() throws IOException {
-
+		logger.debug("readFile() ---  start");
 		try (BufferedReader reader = Files.newBufferedReader(inputFilePath)) {
 			String dataRow = null;
 			while((dataRow = reader.readLine()) != null) {
@@ -60,6 +62,7 @@ public class InputFileReaderImpl implements InputFileReader {
 					logger.warn("Datarow is invalid :" + dataRow);
 				}
 			}
+			logger.debug("readFile() ---  end");
 		}
 
 	}

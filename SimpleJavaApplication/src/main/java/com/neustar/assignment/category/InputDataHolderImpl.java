@@ -10,6 +10,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.neustar.assignment.category.bean.Category;
 import com.neustar.assignment.category.bean.Item;
 
@@ -20,6 +23,7 @@ import com.neustar.assignment.category.bean.Item;
 public class InputDataHolderImpl implements InputDataHolder {
 
 	private Set<Item> items;
+	private static Logger logger = LoggerFactory.getLogger(InputDataHolderImpl.class);
 
 	public InputDataHolderImpl() {
 		this.items = new LinkedHashSet<>();
@@ -35,6 +39,7 @@ public class InputDataHolderImpl implements InputDataHolder {
 	@Override
 	public void addDataRow(String dataRow) throws InvalidDataRowException {
 
+		logger.debug("addDataRow(String dataRow) ---  start");
 		dataRow = dataRow.trim();
 
 		String[] categoryItemArray = dataRow.split("\\s", 2);
@@ -52,6 +57,7 @@ public class InputDataHolderImpl implements InputDataHolder {
 		item.setName(categoryItemArray[1]);
 
 		items.add(item);
+		logger.debug("addDataRow(String dataRow) ---  end");
 
 	}
 
@@ -63,6 +69,7 @@ public class InputDataHolderImpl implements InputDataHolder {
 	@Override
 	public Collection<Item> getItems() {
 
+		logger.debug("getItems()");
 		return Collections.unmodifiableCollection(items);
 	}
 
@@ -75,6 +82,7 @@ public class InputDataHolderImpl implements InputDataHolder {
 	@Override
 	public Map<Category, Integer> retrieveNumberOfItemsByCategory() {
 
+		logger.debug("retrieveNumberOfItemsByCategory() -- start");
 		Map<Category, Integer> categoryNumberMap = new TreeMap<>();
 
 		for (Item item : items) {
@@ -85,7 +93,7 @@ public class InputDataHolderImpl implements InputDataHolder {
 			}
 			categoryNumberMap.put(category, ++numberOfItems);
 		}
-
+		logger.debug("retrieveNumberOfItemsByCategory() -- end");
 		return categoryNumberMap;
 	}
 
