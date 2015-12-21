@@ -9,13 +9,17 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import com.neustar.assignment.category.bean.Category;
+
+import mockit.integration.junit4.JMockit;
 
 /**
  * @author Krishnagopal Thogiti
  *
  */
+@RunWith(JMockit.class)
 public class CategoryTest {
 
 	/**
