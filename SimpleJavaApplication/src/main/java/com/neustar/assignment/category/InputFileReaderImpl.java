@@ -13,8 +13,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * This class provides implementation for InputFileReader
+ * 
  * @author Krishnagopal Thogiti
- *
  */
 public class InputFileReaderImpl implements InputFileReader {
 
